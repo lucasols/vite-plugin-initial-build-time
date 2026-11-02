@@ -1,7 +1,7 @@
 {
   "name": "@ls-stack/vite-plugin-initial-build-time",
   "description": "Vite plugin that measures and reports the initial dev and build time",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "license": "MIT",
   "keywords": [
     "vite",
