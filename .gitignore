@@ -1,5 +1,4 @@
 node_modules
-table.cpuprofile
 dist
-cache.json
 .DS_Store
+*.log

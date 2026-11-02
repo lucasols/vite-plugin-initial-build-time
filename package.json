@@ -1,24 +1,53 @@
 {
-  "name": "vite-plugin-linaria-initial-build-time",
-  "version": "0.3.2",
+  "name": "@ls-stack/vite-plugin-initial-build-time",
+  "description": "Vite plugin that measures and reports the initial dev and build time",
+  "version": "0.0.0",
   "license": "MIT",
+  "keywords": [
+    "vite",
+    "vite-plugin",
+    "build-time",
+    "performance",
+    "dev-server"
+  ],
   "scripts": {
-    "build": "tsc -p tsconfig.prod.json",
-    "npm-publish": "pnpm run build && npm publish"
+    "lint": "pnpm tsc && pnpm eslint",
+    "tsc": "tsc -p tsconfig.json",
+    "eslint": "CI=true eslint src/ test/ --color --max-warnings=0",
+    "test": "vitest run",
+    "build": "tsdown"
   },
   "files": [
     "dist"
   ],
-  "repository": "github:lucaslos/vite-plugin-linaria-initial-build-time",
+  "repository": "github:lucasols/vite-plugin-initial-build-time",
   "author": "Lucas Santos",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "type": "module",
+  "packageManager": "pnpm@12.11.2",
+  "module": "./dist/main.mjs",
+  "types": "./dist/main.d.mts",
+  "exports": {
+    ".": {
+      "types": "./dist/main.d.mts",
+      "default": "./dist/main.mjs"
+    }
+  },
+  "sideEffects": false,
   "engines": {
-    "node": ">=14.6.0"
+    "node": "^20.19.0 || >=22.12.0"
+  },
+  "peerDependencies": {
+    "vite": "^6.0.0 || ^7.0.0 || ^8.0.0"
   },
   "devDependencies": {
-    "@types/node": "^17.0.9",
-    "typescript": "^4.6.4",
-    "vite": "^2.9.12"
+    "@ls-stack/eslint-cfg": "^0.10.0",
+    "@ls-stack/extended-lint": "^0.89.0",
+    "@ls-stack/pkg-manager": "^0.13.0",
+    "@types/node": "^22.19.0",
+    "eslint": "^9.39.4",
+    "tsdown": "^0.23.4",
+    "typescript": "~6.0.3",
+    "vite": "^8.3.5",
+    "vitest": "^5.1.0"
   }
 }
